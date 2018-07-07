@@ -44,45 +44,46 @@
 
         web3.eth.defaultAccount = web3.eth.accounts[0];
 
-        var CoursetroContract = web3.eth.contract({
-      "constant": false,
-      "inputs": [
-        {
-          "name": "_fName",
-          "type": "string"
-        },
-        {
-          "name": "_age",
-          "type": "uint256"
-        }
-      ],
-      "name": "setInstructor",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "getInstructor",
-      "outputs": [
-        {
-          "name": "",
-          "type": "string"
-        },
-        {
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    }
-);
+        var CoursetroContract = web3.eth.contract([
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_fName",
+				"type": "string"
+			},
+			{
+				"name": "_age",
+				"type": "uint256"
+			}
+		],
+		"name": "setInstructor",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getInstructor",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]);
 
-        var Coursetro = CoursetroContract.at('0x270cdbc01557eb60f5fcb02f78fc18b1ea3b5c3c');
+        var Coursetro = CoursetroContract.at('0xbd3d05a09e25f7c20b9569324268792364fd709e');
         console.log(Coursetro);
 
     </script>
